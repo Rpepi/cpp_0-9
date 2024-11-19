@@ -1,32 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pepi <pepi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/18 13:48:13 by rpepi             #+#    #+#             */
-/*   Updated: 2024/11/19 12:13:58 by pepi             ###   ########.fr       */
+/*   Created: 2024/11/14 13:42:10 by pepi              #+#    #+#             */
+/*   Updated: 2024/11/14 14:07:10 by pepi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#ifndef ANIMAL_HPP
-#define ANIMAL_HPP
 
 #include <string>
 #include <iostream>
 
-class Animal
+int main()
 {
-	protected:
-		std::string type;
-	public:
-		Animal();
-		virtual ~Animal();
-		virtual void makeSound() const;
-		std::string getType() const;
-		Animal(const Animal& other);
-		Animal& operator=(const Animal& other);
-};
+    std::string str = "HI THIS IS BRAIN";
+    std::string* stringPTR = &str;
+    std::string& stringREF = str;
 
-#endif
+    std::cout << &str << std::endl;
+    std::cout << stringPTR << std::endl;
+    std::cout << &stringREF << std::endl;
+    
+    std::cout << str << std::endl;
+    std::cout << *stringPTR << std::endl;
+    std::cout << stringREF << std::endl;
+
+    return (0);
+}

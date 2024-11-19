@@ -1,25 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   phonebook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pepi <pepi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/19 11:53:24 by pepi              #+#    #+#             */
-/*   Updated: 2024/11/19 11:53:26 by pepi             ###   ########.fr       */
+/*   Created: 2024/10/31 14:56:11 by pepi              #+#    #+#             */
+/*   Updated: 2024/11/02 13:35:32 by pepi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-#define CAT_HPP
+#ifndef PHONEBOOK_HPP
+#define PHONEBOOK_HPP
 
-#include "Animal.hpp"
+#include "contact.hpp"
+#define MAX_CONTACTS 8
 
-class Cat : public Animal {
+class PhoneBook 
+{
     public:
-        Cat();
-        virtual ~Cat();
-        virtual void makeSound() const;
+        PhoneBook();
+        void addContact();
+        void searchContacts() const;
+        void displayContact(int index) const;
+
+    private:
+        Contact contacts[MAX_CONTACTS];
+        int currentIndex;
+        int totalContacts;
 };
 
 #endif

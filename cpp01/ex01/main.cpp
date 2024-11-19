@@ -1,25 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pepi <pepi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/19 11:53:24 by pepi              #+#    #+#             */
-/*   Updated: 2024/11/19 11:53:26 by pepi             ###   ########.fr       */
+/*   Created: 2024/11/14 13:30:07 by pepi              #+#    #+#             */
+/*   Updated: 2024/11/14 13:37:36 by pepi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-#define CAT_HPP
+#include "Zombie.hpp"
 
-#include "Animal.hpp"
+int main(void)
+{
+    int N = 1;
+    Zombie* horde = zombieHorde(N, "HordeZombie");
 
-class Cat : public Animal {
-    public:
-        Cat();
-        virtual ~Cat();
-        virtual void makeSound() const;
-};
-
-#endif
+    if (horde) 
+    {
+        for (int i = 0; i < N; ++i) 
+        {
+               horde[i].announce();
+        }
+         delete horde;
+    }
+    return 0;
+}

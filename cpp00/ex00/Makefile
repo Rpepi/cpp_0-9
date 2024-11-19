@@ -5,32 +5,41 @@
 #                                                     +:+ +:+         +:+      #
 #    By: pepi <pepi@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/11/18 13:46:01 by rpepi             #+#    #+#              #
-#    Updated: 2024/11/19 11:58:36 by pepi             ###   ########.fr        #
+#    Created: 2024/10/31 15:06:11 by pepi              #+#    #+#              #
+#    Updated: 2024/10/31 15:06:12 by pepi             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ex00
-CC = c++
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+# Nom du programme
+NAME = megaphone
 
-SRCS = main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp
-OBJS = $(SRCS:.cpp=.o)
+# Flags de compilation
+CXX = c++
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
+# Fichiers
+SRC = megaphone.cpp
+OBJ = $(SRC:.cpp=.o)
+
+# Règle par défaut
 all: $(NAME)
 
-$(NAME): $(OBJS)
-	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+# Compilation du programme
+$(NAME): $(OBJ)
+	$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJ)
 
+# Compilation des fichiers .o
 %.o: %.cpp
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CXX) $(CXXFLAGS) -c $< -o $@
 
+# Clean des fichiers .o et de l'exécutable
 clean:
-	rm -f $(OBJS)
+	rm -f $(OBJ)
 
 fclean: clean
 	rm -f $(NAME)
 
+# Rebuild
 re: fclean all
 
 .PHONY: all clean fclean re

@@ -1,25 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pepi <pepi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/19 11:53:24 by pepi              #+#    #+#             */
-/*   Updated: 2024/11/19 11:53:26 by pepi             ###   ########.fr       */
+/*   Created: 2024/11/14 13:11:00 by pepi              #+#    #+#             */
+/*   Updated: 2024/11/14 13:11:41 by pepi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-#define CAT_HPP
+#include "Zombie.hpp"
 
-#include "Animal.hpp"
+Zombie* newZombie(std::string name);
+void randomChump(std::string name);
 
-class Cat : public Animal {
-    public:
-        Cat();
-        virtual ~Cat();
-        virtual void makeSound() const;
-};
+int main(void) 
+{
+    Zombie* heapZombie = newZombie("HeapZombie");
+    heapZombie->announce();
+    delete heapZombie;
 
-#endif
+    randomChump("StackZombie");
+
+    return (0);
+}

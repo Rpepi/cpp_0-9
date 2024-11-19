@@ -6,15 +6,15 @@
 #    By: pepi <pepi@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/18 13:46:01 by rpepi             #+#    #+#              #
-#    Updated: 2024/11/19 11:58:36 by pepi             ###   ########.fr        #
+#    Updated: 2024/11/19 12:15:54 by pepi             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ex00
+NAME = ex01
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRCS = main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp
+SRCS = main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp Brain.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 all: $(NAME)

@@ -1,25 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pepi <pepi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/19 11:53:24 by pepi              #+#    #+#             */
-/*   Updated: 2024/11/19 11:53:26 by pepi             ###   ########.fr       */
+/*   Created: 2024/11/15 13:35:36 by pepi              #+#    #+#             */
+/*   Updated: 2024/11/15 13:38:58 by pepi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-#define CAT_HPP
+#ifndef HARL_HPP
+#define HARL_HPP
 
-#include "Animal.hpp"
+#include <iostream>
+#include <string>
 
-class Cat : public Animal {
-    public:
-        Cat();
-        virtual ~Cat();
-        virtual void makeSound() const;
+class Harl 
+{
+private:
+    void debug(void);
+    void info(void);
+    void warning(void);
+    void error(void);
+
+public:
+    void complain(std::string level);
 };
 
 #endif

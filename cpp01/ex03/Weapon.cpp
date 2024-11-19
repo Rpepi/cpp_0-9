@@ -1,25 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   weapon.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pepi <pepi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/19 11:53:24 by pepi              #+#    #+#             */
-/*   Updated: 2024/11/19 11:53:26 by pepi             ###   ########.fr       */
+/*   Created: 2024/11/14 14:23:50 by pepi              #+#    #+#             */
+/*   Updated: 2024/11/14 14:41:36 by pepi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-#define CAT_HPP
+#include "Weapon.hpp"
 
-#include "Animal.hpp"
+const std::string& Weapon::getType() const 
+{ 
+    return this->type; 
+}
 
-class Cat : public Animal {
-    public:
-        Cat();
-        virtual ~Cat();
-        virtual void makeSound() const;
-};
+void Weapon::setType(std::string type)
+{
+    this->type = type;
+}
 
-#endif
+Weapon::Weapon(const std::string& type)
+{
+    this->type = type;
+}

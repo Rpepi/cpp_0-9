@@ -5,25 +5,21 @@
 #                                                     +:+ +:+         +:+      #
 #    By: pepi <pepi@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/11/18 13:46:01 by rpepi             #+#    #+#              #
-#    Updated: 2024/11/19 11:58:36 by pepi             ###   ########.fr        #
+#    Created: 2024/11/15 13:40:23 by pepi              #+#    #+#              #
+#    Updated: 2024/11/15 13:40:49 by pepi             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ex00
-CC = c++
-CFLAGS = -Wall -Wextra -Werror -std=c++98
-
-SRCS = main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp
+NAME = Harl_2.0
+CXX = c++
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98
+SRCS = main.cpp Harl.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
-
-%.o: %.cpp
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJS)
 
 clean:
 	rm -f $(OBJS)

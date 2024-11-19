@@ -1,25 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   FileReplacer.hpp                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pepi <pepi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/19 11:53:24 by pepi              #+#    #+#             */
-/*   Updated: 2024/11/19 11:53:26 by pepi             ###   ########.fr       */
+/*   Created: 2024/11/15 13:00:58 by pepi              #+#    #+#             */
+/*   Updated: 2024/11/15 13:35:51 by pepi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-#define CAT_HPP
+#ifndef FILEREPLACER_HPP
+#define FILEREPLACER_HPP
 
-#include "Animal.hpp"
+#include <string>
+#include <iostream>
+#include <fstream>
 
-class Cat : public Animal {
+class FileReplacer
+{
+    private:
+        std::string filename;
+        std::string s1;
+        std::string s2;
     public:
-        Cat();
-        virtual ~Cat();
-        virtual void makeSound() const;
+        FileReplacer(std::string filename, std::string s1, std::string s2);
+        bool processFile();
+        std::string replaceLine(std::string line);
+        
 };
 
 #endif

@@ -1,25 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   HumanA.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pepi <pepi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/19 11:53:24 by pepi              #+#    #+#             */
-/*   Updated: 2024/11/19 11:53:26 by pepi             ###   ########.fr       */
+/*   Created: 2024/11/14 14:18:13 by pepi              #+#    #+#             */
+/*   Updated: 2024/11/14 14:39:34 by pepi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-#define CAT_HPP
+#ifndef HUMANA_HPP
+#define HUMANA_HPP
 
-#include "Animal.hpp"
+#include "Weapon.hpp"
 
-class Cat : public Animal {
+class HumanA
+{
+    private:
+        std::string name;
+        Weapon& weapon;
+
     public:
-        Cat();
-        virtual ~Cat();
-        virtual void makeSound() const;
+        HumanA(std::string name, Weapon& weapon);
+        void attack() const;
 };
 
 #endif
