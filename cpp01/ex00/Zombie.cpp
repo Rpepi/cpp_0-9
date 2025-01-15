@@ -3,16 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pepi <pepi@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: rpepi <rpepi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 12:51:27 by pepi              #+#    #+#             */
-/*   Updated: 2024/11/14 12:59:45 by pepi             ###   ########.fr       */
+/*   Updated: 2025/01/15 11:46:00 by rpepi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie::Zombie(std::string name) : name(name) {}
+Zombie::Zombie(std::string name) : name(name) {
+    std::cout << name << " is created" << std::endl;
+}
 
 Zombie::~Zombie(void) 
 {
