@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pepi <pepi@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: rpepi <rpepi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 15:20:43 by pepi              #+#    #+#             */
-/*   Updated: 2024/11/02 13:35:01 by pepi             ###   ########.fr       */
+/*   Updated: 2025/01/15 11:35:39 by rpepi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,14 @@ int main()
     while (true) 
     {
         std::cout << "Enter command (ADD, SEARCH, EXIT): ";
-        std::getline(std::cin, command);
-
+        if (!std::getline(std::cin, command))
+            break ;
         if (command == "ADD") 
             phoneBook.addContact();
         else if (command == "SEARCH") 
             phoneBook.searchContacts();
         else if (command == "EXIT")
-            break;
+            break ;
         else
             std::cout << "Invalid command. Please try again." << std::endl;
     }

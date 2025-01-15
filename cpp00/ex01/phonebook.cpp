@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   phonebook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pepi <pepi@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: rpepi <rpepi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 14:56:09 by pepi              #+#    #+#             */
-/*   Updated: 2024/11/02 13:41:59 by pepi             ###   ########.fr       */
+/*   Updated: 2024/12/12 14:15:28 by rpepi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,15 +42,13 @@ void PhoneBook::addContact()
     std::getline(std::cin, input);
     contact.setDarkestSecret(input);
 
-    // Ajouter le contact au répertoire
     contacts[currentIndex] = contact;
-    currentIndex = (currentIndex + 1) % MAX_CONTACTS; // Remplace le plus ancien si nécessaire
+    currentIndex = (currentIndex + 1) % MAX_CONTACTS; 
     if (totalContacts < MAX_CONTACTS) ++totalContacts;
 }
 
 void PhoneBook::searchContacts() const 
 {
-    // Affichage de l'entête de la liste
     std::cout << std::setw(10) << "Index" << "|" 
               << std::setw(10) << "First name" << "|"
               << std::setw(10) << "Last name" << "|" 
@@ -64,14 +62,15 @@ void PhoneBook::searchContacts() const
         std::cout << std::setw(10) << (contacts[i].getNickname().size() > 10 ? contacts[i].getNickname().substr(0, 9) + "." : contacts[i].getNickname()) << std::endl;
     }
     std::cout << "Enter index of contact to display: ";
-    int index;
-    std::cin >> index;
-    if (std::cin.fail() || index < 0 || index >= totalContacts) 
+    std::string input;
+    
+    while (std::getline(std::cin, input) && input.empty())
+        std::cout << "Enter index of contact to display: ";
+        
+    int index = std::atoi(input.c_str());
+    if (index < 0 || index >= totalContacts) 
     {
         std::cout << "Invalid index." << std::endl;
-        std::cin.clear();
-        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-        // permet d'ignorer les caractères invalides jusqu'à \n
     } 
     else 
         displayContact(index);
