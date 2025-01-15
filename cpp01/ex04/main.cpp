@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pepi <pepi@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: rpepi <rpepi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 12:58:37 by pepi              #+#    #+#             */
-/*   Updated: 2024/11/15 13:31:20 by pepi             ###   ########.fr       */
+/*   Updated: 2025/01/15 13:04:29 by rpepi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@ int main(int argc, char **argv) {
     }
     FileReplacer replacer(argv[1], argv[2], argv[3]);
     if (!replacer.processFile()) {
-        return 1;
+        std::cout << "Erreur dans le traitement du fichier." << std::endl;
+        return (1);
     }
     else
     {
