@@ -3,16 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   HumanB.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pepi <pepi@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: rpepi <rpepi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 14:25:56 by pepi              #+#    #+#             */
-/*   Updated: 2024/11/14 14:33:24 by pepi             ###   ########.fr       */
+/*   Updated: 2025/01/15 12:29:43 by rpepi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanB.hpp"
-
-HumanB::HumanB() : name("") {}
 
 HumanB::HumanB(std::string name) : name(name), weapon(NULL) {}
 
