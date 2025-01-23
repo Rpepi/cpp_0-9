@@ -6,7 +6,7 @@
 /*   By: rpepi <rpepi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 13:06:15 by pepi              #+#    #+#             */
-/*   Updated: 2025/01/23 13:29:44 by rpepi            ###   ########.fr       */
+/*   Updated: 2025/01/23 13:35:09 by rpepi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ FileReplacer::FileReplacer(std::string filename, std::string s1, std::string s2)
 std::string FileReplacer::replaceLine(std::string line) 
 {
 	if (s1.empty()) {
-		return line; // Si s1 est vide, retournez la ligne inchangée
+		return line;
 	}
 	std::string::size_type pos = 0;
 	std::string result = line;
