@@ -6,7 +6,7 @@
 /*   By: rpepi <rpepi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 13:06:15 by pepi              #+#    #+#             */
-/*   Updated: 2025/01/15 13:37:39 by rpepi            ###   ########.fr       */
+/*   Updated: 2025/01/23 13:29:44 by rpepi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,19 +21,19 @@ FileReplacer::FileReplacer(std::string filename, std::string s1, std::string s2)
 
 std::string FileReplacer::replaceLine(std::string line) 
 {
+	if (s1.empty()) {
+		return line; // Si s1 est vide, retournez la ligne inchangée
+	}
 	std::string::size_type pos = 0;
-	std::string result;
+	std::string result = line;
 
-	pos = line.find(s1);
+	pos = result.find(s1);
 	while (pos != std::string::npos)
 	{
-		std::string first_part = line.substr(0, pos);
-		std::string second_part = line.substr(pos + s1.length(), line.length());
-			
-		result = first_part + s2 + second_part;
-		pos = line.find(s1, pos + s2.length());
+		result.replace(pos, s1.length(), s2);
+		pos = result.find(s1, pos + s2.length());
 	} 
-	return (result);
+	return result;
 }
 
 bool FileReplacer::processFile() 
