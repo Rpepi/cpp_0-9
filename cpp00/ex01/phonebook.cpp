@@ -14,6 +14,8 @@
 #include <iostream>
 #include <iomanip>
 #include <limits>
+#include <algorithm>
+#include <cctype>
 
 PhoneBook::PhoneBook() : currentIndex(0), totalContacts(0) {}
 
@@ -24,22 +26,62 @@ void PhoneBook::addContact()
 
     std::cout << "Enter first name: ";
     std::getline(std::cin, input);
+    input.erase(std::remove_if(input.begin(), input.end(), ::isspace), input.end());
+    while (input.empty())
+    {
+        std::cout << "input cannot be empty !" << std::endl;
+        std::cout << "Enter first name: ";
+        std::getline(std::cin, input);
+        input.erase(std::remove_if(input.begin(), input.end(), ::isspace), input.end());
+    }
     contact.setFirstName(input);
 
     std::cout << "Enter last name: ";
     std::getline(std::cin, input);
+    input.erase(std::remove_if(input.begin(), input.end(), ::isspace), input.end());
+    while (input.empty())
+    {
+        std::cout << "input cannot be empty !" << std::endl;
+        std::cout << "Enter last name: ";
+        std::getline(std::cin, input);
+        input.erase(std::remove_if(input.begin(), input.end(), ::isspace), input.end());
+    }
     contact.setLastName(input);
 
     std::cout << "Enter nickname: ";
     std::getline(std::cin, input);
+    input.erase(std::remove_if(input.begin(), input.end(), ::isspace), input.end());
+    while (input.empty())
+    {
+        std::cout << "input cannot be empty !" << std::endl;
+        std::cout << "Enter nickname: ";
+        std::getline(std::cin, input);
+        input.erase(std::remove_if(input.begin(), input.end(), ::isspace), input.end());
+    }
     contact.setNickname(input);
 
     std::cout << "Enter phone number: ";
     std::getline(std::cin, input);
+    input.erase(std::remove_if(input.begin(), input.end(), ::isspace), input.end());
+    while (input.empty())
+    {
+        std::cout << "input cannot be empty !" << std::endl;
+        std::cout << "Enter phone number: ";
+        std::getline(std::cin, input);
+        input.erase(std::remove_if(input.begin(), input.end(), ::isspace), input.end());
+    }
     contact.setPhoneNumber(input);
 
     std::cout << "Enter darkest secret: ";
     std::getline(std::cin, input);
+    input.erase(std::remove_if(input.begin(), input.end(), ::isspace), input.end());
+    while (input.empty())
+    {
+        std::cout << "input cannot be empty !" << std::endl;
+        std::cout << "Enter darkest secret: ";
+        std::getline(std::cin, input);
+        input.erase(std::remove_if(input.begin(), input.end(), ::isspace), input.end());
+    }
     contact.setDarkestSecret(input);
 
     contacts[currentIndex] = contact;
