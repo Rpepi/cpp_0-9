@@ -21,10 +21,9 @@ class Dog : public AAnimal {
         Brain* brain;
     public:
         Dog();
-        Dog(const Dog& other);
         Dog& operator=(const Dog& other);
         virtual ~Dog();
-        virtual void makeSound() const;
+        void makeSound() const;
 };
 
 #endif

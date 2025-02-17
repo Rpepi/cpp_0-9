@@ -18,11 +18,12 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
     this->energyPoints = 50;
     this->attackDamage = 20;
     this->gateKeeperMode = false;
+	std::cout << "ScavTrap " << name << " is born" << std::endl;
 }
 
 ScavTrap::~ScavTrap()
 {
-	std::cout << "ScavTrap " << name << " destroyed" << std::endl;
+	std::cout << "ScavTrap " << name << " is dead" << std::endl;
 }
 
 void ScavTrap::guardGate()
@@ -45,7 +46,7 @@ void ScavTrap::attack(const std::string& target)
 		std::cout << "ScavTrap " << name << " cannot attack because it has no hit points or energy points" << std::endl;
 		return;
 	}
-	std::cout << "ScavTrap " << name << " attacks " << target << ", causing " << attackDamage << " points of damage!" << std::endl;
+	std::cout << "ScavTrap " << name << " assault " << target << ", causing " << attackDamage << " points of damage!" << std::endl;
 	energyPoints--;
 }
 

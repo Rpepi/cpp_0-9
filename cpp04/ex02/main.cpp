@@ -30,16 +30,9 @@ int main()
     std::cout << j->getType() << std::endl;
     std::cout << i->getType() << std::endl;
     
-    // Test de copie profonde
-    std::cout << "\nTest de copie :" << std::endl;
-    Dog* dog1 = new Dog();
-    Dog* dog2 = new Dog(*dog1);  // Copie profonde
-    
     // Nettoyage
     delete j;
     delete i;
-    delete dog1;
-    delete dog2;
     
     // Test avec un tableau
     std::cout << "\nTest avec tableau :" << std::endl;

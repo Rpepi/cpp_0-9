@@ -14,12 +14,12 @@
 
 Animal::Animal() : type("")
 {
-	std::cout << "Un Animal est né" << std::endl;
+	std::cout << "Un Animal est venu au monde" << std::endl;
 }
 
 Animal::~Animal()
 {
-	std::cout << "Un Animal nous a quittés" << std::endl;
+	std::cout << "Un Animal est mort" << std::endl;
 }
 
 void Animal::makeSound() const

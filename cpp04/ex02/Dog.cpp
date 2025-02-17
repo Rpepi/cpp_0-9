@@ -18,11 +18,7 @@ Dog::Dog() : AAnimal() {
     std::cout << "Un chien est né avec un cerveau" << std::endl;
 }
 
-Dog::Dog(const Dog& other) : AAnimal(other) {
-    this->brain = new Brain(*other.brain);
-    this->type = other.type;
-    std::cout << "Un chien a été cloné" << std::endl;
-}
+
 
 Dog& Dog::operator=(const Dog& other) {
     if (this != &other) {

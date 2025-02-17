@@ -14,11 +14,11 @@
 
 Cat::Cat() {
     this->type = "Cat";
-    std::cout << "Un chat est né" << std::endl;
+    std::cout << "Un chat est apparu" << std::endl;
 }
 
 Cat::~Cat() {
-    std::cout << "Un chat nous a quittés" << std::endl;
+    std::cout << "Un chat c'est fait fumer" << std::endl;
 }
 
 void Cat::makeSound() const {

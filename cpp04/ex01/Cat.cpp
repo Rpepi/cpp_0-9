@@ -18,11 +18,6 @@ Cat::Cat() : Animal() {
     std::cout << "Un chat est né avec un cerveau" << std::endl;
 }
 
-Cat::Cat(const Cat& other) : Animal(other) {
-    this->brain = new Brain(*other.brain);
-    this->type = other.type;
-    std::cout << "Un chat a été cloné" << std::endl;
-}
 
 Cat& Cat::operator=(const Cat& other) {
     if (this != &other) {
