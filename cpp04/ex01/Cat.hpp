@@ -6,7 +6,7 @@
 /*   By: pepi <pepi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 11:53:24 by pepi              #+#    #+#             */
-/*   Updated: 2024/11/19 12:11:26 by pepi             ###   ########.fr       */
+/*   Updated: 2025/02/18 11:02:46 by pepi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ private:
 public:
     Cat();
     virtual ~Cat();
+    Cat(const Cat& other);
     Cat& operator=(const Cat& other);
     virtual void makeSound() const;
 };

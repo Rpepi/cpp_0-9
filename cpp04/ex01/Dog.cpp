@@ -6,7 +6,7 @@
 /*   By: pepi <pepi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 11:53:29 by pepi              #+#    #+#             */
-/*   Updated: 2024/11/19 12:19:13 by pepi             ###   ########.fr       */
+/*   Updated: 2025/02/18 11:02:28 by pepi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,11 @@ Dog::Dog() : Animal() {
     std::cout << "Un chien est né avec un cerveau" << std::endl;
 }
 
+Dog::Dog(const Dog& other) : Animal(other) {
+    this->brain = new Brain(*other.brain);
+    this->type = other.type;
+    std::cout << "Un chien a été cloné" << std::endl;
+}
 
 Dog& Dog::operator=(const Dog& other) {
     if (this != &other) {
