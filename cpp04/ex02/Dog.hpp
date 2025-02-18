@@ -6,7 +6,7 @@
 /*   By: pepi <pepi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 11:53:37 by pepi              #+#    #+#             */
-/*   Updated: 2024/11/19 12:27:48 by pepi             ###   ########.fr       */
+/*   Updated: 2025/02/18 11:08:45 by pepi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ class Dog : public AAnimal {
         Brain* brain;
     public:
         Dog();
+        Dog(const Dog& other);
         Dog& operator=(const Dog& other);
         virtual ~Dog();
         void makeSound() const;
