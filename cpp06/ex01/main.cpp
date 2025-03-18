@@ -27,7 +27,7 @@ int main()
     std::cout << "Age: " << data->age << std::endl;
 
     // Sérialisation
-    uintptr_t serialized = Serialization::serialize(data);
+    unsigned long serialized = Serialization::serialize(data);
     std::cout << "\nSerialized value: " << serialized << std::endl;
 
     // Désérialisation

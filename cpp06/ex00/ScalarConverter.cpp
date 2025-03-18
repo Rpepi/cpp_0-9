@@ -11,6 +11,9 @@
 /* ************************************************************************** */
 
 #include "ScalarConverter.hpp"
+#include <cstdlib>  // Pour std::atof
+#include <iostream>
+#include <iomanip>  // Pour std::fixed et std::setprecision
 
 ScalarConverter::ScalarConverter() {}
 
@@ -37,7 +40,7 @@ bool ScalarConverter::isPseudoLiteral(const std::string& literal) {
 
 bool ScalarConverter::isFloat(const std::string& literal) {
     if (literal.empty()) return false;
-    return (literal.back() == 'f' && literal.find('.') != std::string::npos);
+    return (literal[literal.length() - 1] == 'f' && literal.find('.') != std::string::npos);
 }
 
 bool ScalarConverter::isDouble(const std::string& literal) {
@@ -83,9 +86,9 @@ void ScalarConverter::convertFromNumeric(const std::string& literal) {
     try {
         double value;
         if (isFloat(literal)) {
-            value = std::stod(literal.substr(0, literal.length() - 1));
+            value = std::atof(literal.substr(0, literal.length() - 1).c_str());
         } else {
-            value = std::stod(literal); //stod = string -> double
+            value = std::atof(literal.c_str());  // atof = string -> double
         }
 
         // Conversion et affichage char

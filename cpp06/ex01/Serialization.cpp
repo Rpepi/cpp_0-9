@@ -25,12 +25,12 @@ Serialization& Serialization::operator=(const Serialization& other) {
 
 Serialization::~Serialization() {}
 
-uintptr_t Serialization::serialize(Data* ptr)
+unsigned long Serialization::serialize(Data* ptr)
 {
-    return reinterpret_cast<uintptr_t>(ptr); //uintpr parce que asser large pour valeur pointeur
+    return reinterpret_cast<unsigned long>(ptr);
 }
 
-Data* Serialization::deserialize(uintptr_t raw)
+Data* Serialization::deserialize(unsigned long raw)
 {
     return reinterpret_cast<Data *>(raw);
 }
