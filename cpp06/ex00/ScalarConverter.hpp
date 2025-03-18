@@ -6,7 +6,7 @@
 /*   By: pepi <pepi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 17:07:28 by pepi              #+#    #+#             */
-/*   Updated: 2025/02/24 18:34:48 by pepi             ###   ########.fr       */
+/*   Updated: 2025/03/18 10:36:47 by pepi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@
 class ScalarConverter {
     private:
         ScalarConverter();
-        ScalarConverter(const ScalarConverter& other); // Copy constructor
-        ScalarConverter& operator=(const ScalarConverter& other); // Copy assignment operator
+        ScalarConverter(const ScalarConverter& other);
+        ScalarConverter& operator=(const ScalarConverter& other);
         ~ScalarConverter();
         
         static bool isChar(const std::string& literal);

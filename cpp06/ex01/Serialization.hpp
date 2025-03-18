@@ -6,7 +6,7 @@
 /*   By: pepi <pepi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 18:04:55 by pepi              #+#    #+#             */
-/*   Updated: 2025/02/24 18:35:25 by pepi             ###   ########.fr       */
+/*   Updated: 2025/03/18 10:53:18 by pepi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@
 
 typedef struct Data {
     std::string name;
-    int age;
-    Data    *next;
+    int         age;
+    Data        *next;
 }  Data;
 
 class Serialization {

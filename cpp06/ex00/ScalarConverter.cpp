@@ -6,7 +6,7 @@
 /*   By: pepi <pepi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 17:07:21 by pepi              #+#    #+#             */
-/*   Updated: 2025/02/24 18:34:53 by pepi             ###   ########.fr       */
+/*   Updated: 2025/03/18 10:33:07 by pepi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,12 @@ bool ScalarConverter::isDouble(const std::string& literal) {
 bool ScalarConverter::isInt(const std::string& literal) {
     if (literal.empty()) return false;
     size_t start = (literal[0] == '-' || literal[0] == '+') ? 1 : 0;
-    return std::all_of(literal.begin() + start, literal.end(), ::isdigit);
+    for (size_t i = start; i < literal.length(); ++i) {
+        if (!isdigit(literal[i])) {
+            return false;
+        }
+    }
+    return true;
 }
 
 void ScalarConverter::convertFromChar(const std::string& literal) {
@@ -80,7 +85,7 @@ void ScalarConverter::convertFromNumeric(const std::string& literal) {
         if (isFloat(literal)) {
             value = std::stod(literal.substr(0, literal.length() - 1));
         } else {
-            value = std::stod(literal);
+            value = std::stod(literal); //stod = string -> double
         }
 
         // Conversion et affichage char
