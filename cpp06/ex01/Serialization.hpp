@@ -17,6 +17,8 @@
 # include <string>
 # include <iomanip>
 
+typedef unsigned long long uintptr_t;
+
 typedef struct Data {
     std::string name;
     int         age;
