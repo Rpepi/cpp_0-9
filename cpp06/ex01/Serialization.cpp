@@ -6,7 +6,7 @@
 /*   By: pepi <pepi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 18:04:58 by pepi              #+#    #+#             */
-/*   Updated: 2025/03/18 10:55:00 by pepi             ###   ########.fr       */
+/*   Updated: 2025/03/20 13:15:12 by pepi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,10 @@ Serialization::~Serialization() {}
 
 unsigned long Serialization::serialize(Data* ptr)
 {
-    return reinterpret_cast<unsigned long>(ptr);
+    return reinterpret_cast<uintptr_t>(ptr);
 }
 
-Data* Serialization::deserialize(unsigned long raw)
+Data* Serialization::deserialize(uintptr_t raw)
 {
     return reinterpret_cast<Data *>(raw);
 }

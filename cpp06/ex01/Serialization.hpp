@@ -6,7 +6,7 @@
 /*   By: pepi <pepi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 18:04:55 by pepi              #+#    #+#             */
-/*   Updated: 2025/03/18 10:53:18 by pepi             ###   ########.fr       */
+/*   Updated: 2025/03/20 13:15:30 by pepi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ class Serialization {
         ~Serialization();
     public:
         static unsigned long serialize(Data* ptr);
-        static Data* deserialize(unsigned long raw);
+        static Data* deserialize(uintptr_t raw);
 };
 
 #endif
