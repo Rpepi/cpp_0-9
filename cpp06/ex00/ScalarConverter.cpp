@@ -6,14 +6,14 @@
 /*   By: pepi <pepi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 17:07:21 by pepi              #+#    #+#             */
-/*   Updated: 2025/03/20 13:11:56 by pepi             ###   ########.fr       */
+/*   Updated: 2025/03/21 12:54:40 by pepi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScalarConverter.hpp"
-#include <cstdlib>  // Pour std::atof
+#include <cstdlib>
 #include <iostream>
-#include <iomanip>  // Pour std::fixed et std::setprecision
+#include <iomanip>
 
 ScalarConverter::ScalarConverter() {}
 
