@@ -6,27 +6,24 @@
 /*   By: pepi <pepi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 11:36:33 by pepi              #+#    #+#             */
-/*   Updated: 2025/03/06 12:11:51 by pepi             ###   ########.fr       */
+/*   Updated: 2025/03/24 11:51:44 by pepi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef EASYFIND_HPP
-# define TEMPLATE_HPP
+# define EASYFIND_HPP
 
 #include <iostream>
 #include <algorithm>
-#include <string>
-#include <iterator>
+#include <vector>
 
 template <typename T> int easyfind(T& container, int i)
 {
-    for (int j = 0; container[j] != '\0'; j++)
+    typename T::iterator it = std::find(container.begin(), container.end(), i);
+    if (it != container.end())
     {
-        if (i == container[j])
-        {
-            std::cout << "occurence trouvée a l'index " << j << std::endl;
-            return (0);
-        }
+        std::cout << "occurence trouvée a l'index " << std::distance(container.begin(), it) << std::endl;
+        return (0);
     }
     std::cout << "occurence non trouvée..." << std::endl;
     return (1);
