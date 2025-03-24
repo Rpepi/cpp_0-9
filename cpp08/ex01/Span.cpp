@@ -1,11 +1,23 @@
 #include "Span.hpp"
 
+Span::Span() : size(0) {
+}
+
 Span::Span(const unsigned int N) : size(N) {
 }
 
+Span::Span(const Span& other) : span(other.span), size(other.size) {
+}
+
+Span& Span::operator=(const Span& other) {
+    if (this != &other) {
+        span = other.span;
+        size = other.size;
+    }
+    return *this;
+}
 
 Span::~Span() {}
-
 
 void Span::addNumber(unsigned int N) 
 {
@@ -13,8 +25,6 @@ void Span::addNumber(unsigned int N)
         throw  Span::Spanisfull();
     span.push_back(N);
 }
-
-
 
 unsigned int Span::longestSpan()
 {

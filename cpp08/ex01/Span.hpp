@@ -6,7 +6,7 @@
 /*   By: pepi <pepi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 12:14:01 by pepi              #+#    #+#             */
-/*   Updated: 2025/03/06 15:20:52 by pepi             ###   ########.fr       */
+/*   Updated: 2025/03/24 11:56:10 by pepi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,10 @@ class Span {
         std::vector<unsigned int> span;
         unsigned int size;
     public:
+        Span();
         Span(const unsigned int N);
+        Span(const Span& other);
+        Span& operator=(const Span& other);
         ~Span();
         void addNumber(unsigned int N);
         template <typename Iterator>
