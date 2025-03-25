@@ -6,7 +6,7 @@
 /*   By: pepi <pepi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 12:14:01 by pepi              #+#    #+#             */
-/*   Updated: 2025/03/24 11:56:10 by pepi             ###   ########.fr       */
+/*   Updated: 2025/03/24 12:04:05 by pepi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ class Span {
         Span(const Span& other);
         Span& operator=(const Span& other);
         ~Span();
+        
         void addNumber(unsigned int N);
         template <typename Iterator>
         void addNumbers(Iterator begin, Iterator end)

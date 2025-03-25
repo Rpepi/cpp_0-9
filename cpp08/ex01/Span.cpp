@@ -22,28 +22,28 @@ Span::~Span() {}
 void Span::addNumber(unsigned int N) 
 {
     if (span.size() == size)
-        throw  Span::Spanisfull();
+        throw Spanisfull();
     span.push_back(N);
 }
 
 unsigned int Span::longestSpan()
 {
     if (span.size() < 2)
-        throw Span::Spanistooshort();
+        throw Spanistooshort();
+        
     std::vector<unsigned int>::iterator begin = span.begin();
-    std::vector<unsigned int>::iterator end = span.end() - 1;
+    std::vector<unsigned int>::iterator end = span.end();
 
     std::vector<unsigned int>::iterator shortest = std::min_element(begin, end);
     std::vector<unsigned int>::iterator longest = std::max_element(begin, end);
 
-    std::cout << "la plus longue difference est " ;
     return (*longest - *shortest);
 }
 
 unsigned int Span::shortestSpan()
 {
     if (span.size() < 2)
-        throw Span::Spanistooshort();
+        throw Spanistooshort();
     
     std::vector<unsigned int> sortedSpan = span;
     std::sort(sortedSpan.begin(), sortedSpan.end());
@@ -55,6 +55,5 @@ unsigned int Span::shortestSpan()
             minDiff = diff;
         }
     }
-    std::cout << "la plus courte difference est ";
-    return (minDiff);
+    return minDiff;
 } 
