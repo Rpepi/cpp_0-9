@@ -6,7 +6,7 @@
 /*   By: pepi <pepi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/21 11:41:57 by rpepi             #+#    #+#             */
-/*   Updated: 2025/03/21 12:39:38 by pepi             ###   ########.fr       */
+/*   Updated: 2025/04/03 12:11:43 by pepi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,17 +24,16 @@
 class bitcoin {
     private:
         std::map<std::string, double> database;
-        bool isValidDate(const std::string& date) const;
-        bool isValidValue(const double value) const;
-        void loadDatabase(void);
-        std::string trim(const std::string& str) const;
+        bool isValidDate(const std::string date) const;
+        void loadDatabase(const std::string filename);
+        std::string trim(const std::string str) const;
 
     public:
-        bitcoin();
+        bitcoin(const std::string csvFile);
         bitcoin(const bitcoin& other);
         bitcoin& operator=(const bitcoin& other);
         ~bitcoin();
-        void getprice(const std::string& input);
+        void getprice(const std::string input);
         class InvalidDateException : public std::exception {
             public:
                 virtual const char* what() const throw() {
