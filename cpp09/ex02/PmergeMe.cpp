@@ -1,15 +1,17 @@
 #include "PmergeMe.hpp"
-
 PmergeMe::PmergeMe() {}
 
-PmergeMe::PmergeMe(const PmergeMe& src) : _vec(src._vec), _deq(src._deq) {}
+PmergeMe::PmergeMe(const PmergeMe& src) {
+    this->_vec = src._vec;
+    this->_deq = src._deq;
+}
 
 PmergeMe::~PmergeMe() {}
 
 PmergeMe& PmergeMe::operator=(const PmergeMe& rhs) {
     if (this != &rhs) {
-        _vec = rhs._vec;
-        _deq = rhs._deq;
+        this->_vec = rhs._vec;
+        this->_deq = rhs._deq;
     }
     return *this;
 }
@@ -57,22 +59,30 @@ void PmergeMe::_mergeVector(std::vector<int>& arr, int left, int mid, int right)
 }
 
 void PmergeMe::_insertionSortVector(std::vector<int>& arr, int left, int right) {
-    for (int i = left + 1; i <= right; ++i) {
-        int key = arr[i];
-        int j = i - 1;
-        while (j >= left && arr[j] > key) {
-            arr[j + 1] = arr[j];
-            --j;
-        }
-        arr[j + 1] = key;
+    if (left >= right) return;  // Condition de sortie
+    int key = arr[right];
+    int j = right - 1;
+    while (j >= left && arr[j] > key) {
+        arr[j + 1] = arr[j];
+        --j;
     }
+    arr[j + 1] = key;
+    _insertionSortVector(arr, left, right - 1);  // Appel récursif
 }
 
 void PmergeMe::_mergeInsertSortVector(std::vector<int>& arr) {
     const int THRESHOLD = 10;
     int n = arr.size();
+    std::vector<int> jacobsthalSeq;
+    jacobsthalSeq.push_back(1);
+    jacobsthalSeq.push_back(1);
     
-    for (int size = 1; size < n; size = 2 * size) {
+    while (jacobsthalSeq.back() < n) {
+        jacobsthalSeq.push_back(jacobsthalSeq[jacobsthalSeq.size() - 1] + jacobsthalSeq[jacobsthalSeq.size() - 2]);
+    }
+
+    for (size_t i = 0; i < jacobsthalSeq.size(); ++i) {
+        int size = jacobsthalSeq[i];
         for (int left = 0; left < n - 1; left += 2 * size) {
             int mid = std::min(left + size - 1, n - 1);
             int right = std::min(left + 2 * size - 1, n - 1);
@@ -107,22 +117,30 @@ void PmergeMe::_mergeDeque(std::deque<int>& arr, int left, int mid, int right) {
 }
 
 void PmergeMe::_insertionSortDeque(std::deque<int>& arr, int left, int right) {
-    for (int i = left + 1; i <= right; ++i) {
-        int key = arr[i];
-        int j = i - 1;
-        while (j >= left && arr[j] > key) {
-            arr[j + 1] = arr[j];
-            --j;
-        }
-        arr[j + 1] = key;
+    if (left >= right) return;  // Condition de sortie
+    int key = arr[right];
+    int j = right - 1;
+    while (j >= left && arr[j] > key) {
+        arr[j + 1] = arr[j];
+        --j;
     }
+    arr[j + 1] = key;
+    _insertionSortDeque(arr, left, right - 1);  // Appel récursif
 }
 
 void PmergeMe::_mergeInsertSortDeque(std::deque<int>& arr) {
     const int THRESHOLD = 10;
     int n = arr.size();
+    std::vector<int> jacobsthalSeq;
+    jacobsthalSeq.push_back(1);
+    jacobsthalSeq.push_back(1);
     
-    for (int size = 1; size < n; size = 2 * size) {
+    while (jacobsthalSeq.back() < n) {
+        jacobsthalSeq.push_back(jacobsthalSeq[jacobsthalSeq.size() - 1] + jacobsthalSeq[jacobsthalSeq.size() - 2]);
+    }
+
+    for (size_t i = 0; i < jacobsthalSeq.size(); ++i) {
+        int size = jacobsthalSeq[i];
         for (int left = 0; left < n - 1; left += 2 * size) {
             int mid = std::min(left + size - 1, n - 1);
             int right = std::min(left + 2 * size - 1, n - 1);
